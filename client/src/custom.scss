@@ -1,0 +1,19 @@
+// Overriding the boostrap theme
+$primary: #655d8a;
+$success: #99ddcc;
+$info: #7897ab;
+$danger: #ff0000;
+
+$theme-colors: (
+  "primary": $primary,
+  "success": $success,
+  "info": $info,
+  "danger": $danger,
+);
+
+@import "~bootstrap/scss/bootstrap.scss";
+
+.movie-card {
+  width: 250px;
+  //   height: 200px;
+}
