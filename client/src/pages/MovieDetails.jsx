@@ -5,6 +5,8 @@ import { Card, Alert } from "react-bootstrap";
 import axios from "axios";
 import moment from "moment";
 
+import Loader from "../components/Loader";
+
 function MovieDetails() {
   const { movieId } = useParams();
   const [loading, setLoading] = useState(false);
@@ -20,7 +22,7 @@ function MovieDetails() {
       setLoading(true);
       const response = await axios({
         method: "get",
-        url: `http://localhost:4000/api/movies${movieId}`,
+        url: `http://localhost:4000/api/movies/${movieId}`,
       });
       setLoading(false);
       setDetails(response.data.movie);
@@ -33,7 +35,7 @@ function MovieDetails() {
     <Card bg="info" text="white">
       {error && <Alert variant="danger">{error}</Alert>}
       {loading ? (
-        <loader />
+        <Loader />
       ) : (
         <>
           <Card.Header>
