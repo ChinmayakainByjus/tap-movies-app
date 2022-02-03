@@ -39,9 +39,7 @@ function MovieDetails() {
       ) : (
         <>
           <Card.Header>
-            <h1>
-              {details.title} {movieId}
-            </h1>
+            <h1>{details.title}</h1>
           </Card.Header>
           <Card.Body>
             <Card.Img variant="top" src={details.poster} />
