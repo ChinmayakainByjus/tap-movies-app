@@ -21,13 +21,13 @@ module.exports = (sequelize, Datatypes) => {
         type: Datatypes.STRING,
         alowNull: false,
       },
-      poster: {
-        type: Datatypes.STRING,
-        alowNull: false,
-      },
       rating: {
         type: Datatypes.INTEGER,
         allowNull: false,
+      },
+      poster: {
+        type: Datatypes.STRING,
+        alowNull: false,
       },
     },
     {
