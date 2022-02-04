@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Form, Button, Card } from "react-bootstrap";
-import axios from "axios";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 const AddMovie = () => {
   const [formValues, setFormValues] = useState({});
@@ -25,67 +25,44 @@ const AddMovie = () => {
       });
       history.push("/");
     } catch (err) {
-      alert("Error! Add Movie failed.");
+      alert("Add Movie Failed!".err);
     }
   };
 
   return (
     <Card>
       <Card.Header className="p-3">
-        <h4>Add Movies</h4>
+        <h4>Add Movie</h4>
       </Card.Header>
       <Card.Body>
-        <Form.Group className="mb-3" controlId="MovieTitle">
+        <Form.Group className="mb-3" controlId="title">
           <Form.Label>Movie Title</Form.Label>
           <Form.Control
             type="text"
+            name="title"
             placeholder="Enter Movie Title"
-            name="MovieTitle"
             onChange={onChangeFormField}
           />
         </Form.Group>
-
-        <Form.Group className="mb-3" controlId="CastNames">
-          <Form.Label>Casts</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter cast's Names"
-            name="CastNames"
-            onChange={onChangeFormField}
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="DirectorName">
-          <Form.Label>Directors</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Director's Names"
-            name="DirectorName"
-            onChange={onChangeFormField}
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="ImdbRatings">
-          <Form.Label>Ratings</Form.Label>
+        <Form.Group className="mb-3" controlId="rating">
+          <Form.Label>Movie Rating</Form.Label>
           <Form.Control
             type="number"
-            placeholder="Enter Imdb Ratings"
-            name="ImdbRatings"
+            name="rating"
+            placeholder="Enter Movie Rating"
             onChange={onChangeFormField}
           />
         </Form.Group>
-
-        <Form.Group className="mb-3" controlId="Poster">
-          <Form.Label>Poster</Form.Label>
+        <Form.Group className="mb-3" controlId="poster">
+          <Form.Label>Movie Poster</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter the poster link"
-            name="Poster"
+            name="poster"
+            placeholder="Enter Movie poster URL"
             onChange={onChangeFormField}
           />
         </Form.Group>
-
-        <Button variant="primary" type="submit" onClick={onClickSubmit}>
+        <Button variant="primary" type="button" onClick={onClickSubmit}>
           Submit
         </Button>
       </Card.Body>
